@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './components/Toast';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -23,6 +23,15 @@ import NotFound from './pages/NotFound';
 
 const STAFF = ['Admin', 'HeadAdmin'];
 
+// The packaged desktop app opens dist/index.html through file://, where
+// BrowserRouter cannot resolve paths. Inside Electron (detected through the
+// preload bridge, or by the file: protocol itself) use HashRouter instead.
+// The browser build keeps BrowserRouter exactly as before.
+const isDesktop =
+  typeof window !== 'undefined' &&
+  (window.barangayDesktop?.isDesktop === true || window.location.protocol === 'file:');
+const Router = isDesktop ? HashRouter : BrowserRouter;
+
 /** Residents land on their read-only complaint list; staff land on the dashboard. */
 function HomeRedirect() {
   const { booting, isAuthenticated, isResident } = useAuth();
@@ -33,7 +42,7 @@ function HomeRedirect() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <ToastProvider>
         <AuthProvider>
           <Routes>
@@ -66,6 +75,6 @@ export default function App() {
           </Routes>
         </AuthProvider>
       </ToastProvider>
-    </BrowserRouter>
+    </Router>
   );
 }

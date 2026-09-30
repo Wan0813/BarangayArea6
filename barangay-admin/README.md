@@ -1,22 +1,51 @@
-# Barangay MIS — Admin Dashboard
+# Barangay MIS — Admin (Desktop + Web)
 
-React 18 + Vite single-page dashboard for barangay staff. It talks to the
+React 18 + Vite single-page dashboard for barangay staff, wrapped in
+**Electron** so it runs as an installable Windows desktop app. It talks to the
 `MyApp` ASP.NET Core API described in `../docs/API.md`.
 
-Stack: **React 18**, **Vite**, **react-router-dom**, plain CSS (`src/styles.css`).
+Stack: **React 18**, **Vite**, **react-router-dom**, plain CSS (`src/styles.css`),
+**Electron** + **electron-builder** for the desktop shell.
 No UI component library, no Tailwind, no axios — all HTTP goes through `fetch`.
 
-## Getting started
+## Running it
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # production bundle in dist/
-npm run preview  # serve the production build
+npm run electron:dev   # desktop app (Electron window + Vite dev server)
 ```
 
+`electron:dev` opens the app in its own desktop window — no browser needed.
+Close any `npm run dev` / `vite` server first: both use port 5173.
+
 The API must be running at the address configured in `src/config.js`
-(default `http://localhost:5080/api`).
+(default `http://localhost:5080/api`), otherwise login fails with a
+connection error.
+
+## Other commands
+
+```bash
+npm run dev            # browser version at http://localhost:5173
+npm run build          # web production bundle in dist/
+npm run preview        # serve the production build
+npm run electron:build # dist/ + dist-electron/ (what the installer packages)
+npm run dist           # full Windows installer in release/
+                       # → release/Barangay Admin Setup 1.0.0.exe
+```
+
+Install the exe once and the admin runs like any desktop program (Start Menu +
+Desktop shortcuts). It still needs the API running to sign in.
+
+## How the desktop shell works
+
+* `electron/main.js` — opens the window. Loads the Vite dev server in
+  development, `dist/index.html` in the packaged app. Single-instance lock,
+  external links open in the system browser.
+* `electron/preload.js` — tiny bridge exposing `window.barangayDesktop`
+  (`isDesktop`, platform, versions). No Node APIs reach the page.
+* `src/App.jsx` — uses `HashRouter` automatically inside Electron (the
+  packaged app loads over `file://`, where `BrowserRouter` cannot work) and
+  keeps `BrowserRouter` in the browser. Nothing else changes between shells.
 
 ## Configuration
 
@@ -37,8 +66,11 @@ To point the dashboard at another server, edit only that file.
 ```
 barangay-admin/
 ├── index.html
-├── package.json
-├── vite.config.js            # dev server port 5173
+├── package.json            # scripts: electron:dev / dist; electron-builder config
+├── vite.config.js          # dev server port 5173 + Electron plugin
+├── electron/
+│   ├── main.js             # desktop window shell (dev server or dist/index.html)
+│   └── preload.js          # window.barangayDesktop bridge (isDesktop flag)
 └── src/
     ├── config.js             # THE single config file
     ├── main.jsx, App.jsx     # router + providers

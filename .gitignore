@@ -13,6 +13,8 @@ MyApp/**/Migrations/**/*.Designer.cs.bak
 # --------------------------------------------------------------- Node / Vite
 node_modules/
 dist/
+dist-electron/
+release/
 build/
 .vite/
 *.tsbuildinfo

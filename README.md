@@ -86,15 +86,25 @@ carry the user id, username, role and status.
 
 ---
 
-## 3. Admin dashboard — `barangay-admin/`
+## 3. Admin desktop app — `barangay-admin/`
+
+React + Vite dashboard wrapped in **Electron**, so it runs as an installable
+Windows program (it still talks to the API over HTTP).
 
 ```powershell
 cd barangay-admin
 npm install
-npm run dev        # http://localhost:5173
+npm run electron:dev   # opens the desktop app window (close `npm run dev` first: same port)
+```
+
+To build the installer (`release/Barangay Admin Setup 1.0.0.exe`):
+
+```powershell
+npm run dist
 ```
 
 Edit `src/config.js` for the API URL, barangay name and page size.
+(`npm run dev` still serves the plain browser version at http://localhost:5173.)
 
 Pages: Login, Signup, Forgot password, Dashboard, Staff, Accounts, Households,
 Complaints, Emergencies, Daily Operations, Duty Roster, Announcements, About, Profile.

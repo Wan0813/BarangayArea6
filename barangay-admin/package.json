@@ -2,12 +2,17 @@
   "name": "barangay-admin",
   "private": true,
   "version": "1.0.0",
-  "description": "Admin web dashboard for the Barangay Management Information System (capstone project).",
+  "description": "Admin desktop + web dashboard for the Barangay Management Information System (capstone project).",
   "type": "module",
+  "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:dev": "vite",
+    "electron:build": "vite build",
+    "dist": "vite build && electron-builder",
+    "dist:dir": "vite build && electron-builder --dir"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -16,6 +21,33 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.8"
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "vite": "^5.4.8",
+    "vite-plugin-electron": "^0.28.8",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  },
+  "build": {
+    "appId": "ph.brgy.area6.admin",
+    "productName": "Barangay Admin",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Barangay Admin"
+    }
   }
 }

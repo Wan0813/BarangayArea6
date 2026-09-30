@@ -26,7 +26,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,6 +41,11 @@
           "photosPermission": "Allow $(PRODUCT_NAME) to access your photos so you can attach a valid ID or complaint image."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f42a7924-18b4-435a-9fcc-0dc2fe19e8da"
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import FormField from '../components/FormField';
+import PasswordInput from '../components/PasswordInput';
 import ImageUpload from '../components/ImageUpload';
 import StatusBadge from '../components/StatusBadge';
 import { useToast } from '../components/Toast';
@@ -221,9 +222,8 @@ export default function Profile() {
 
           <form onSubmit={changePassword}>
             <FormField label="Current password" htmlFor="pf-current" required>
-              <input
+              <PasswordInput
                 id="pf-current"
-                type="password"
                 autoComplete="current-password"
                 value={passwords.currentPassword}
                 onChange={(event) => setPasswords((prev) => ({ ...prev, currentPassword: event.target.value }))}
@@ -231,9 +231,8 @@ export default function Profile() {
             </FormField>
 
             <FormField label="New password" htmlFor="pf-new" required hint="At least 6 characters.">
-              <input
+              <PasswordInput
                 id="pf-new"
-                type="password"
                 autoComplete="new-password"
                 value={passwords.newPassword}
                 onChange={(event) => setPasswords((prev) => ({ ...prev, newPassword: event.target.value }))}
@@ -241,9 +240,8 @@ export default function Profile() {
             </FormField>
 
             <FormField label="Confirm new password" htmlFor="pf-confirm" required>
-              <input
+              <PasswordInput
                 id="pf-confirm"
-                type="password"
                 autoComplete="new-password"
                 value={passwords.confirmPassword}
                 onChange={(event) => setPasswords((prev) => ({ ...prev, confirmPassword: event.target.value }))}

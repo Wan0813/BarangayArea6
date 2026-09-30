@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
 import FormField from '../components/FormField';
+import PasswordInput from '../components/PasswordInput';
 import ImageUpload from '../components/ImageUpload';
 import { auth } from '../api/endpoints';
 import { config } from '../config';
@@ -137,13 +138,13 @@ export default function Signup() {
             </FormField>
 
             <FormField label="Password" htmlFor="su-pass" required error={errors.password} hint="At least 6 characters.">
-              <input id="su-pass" type="password" value={form.password} onChange={(event) => update('password', event.target.value)} />
+              <PasswordInput id="su-pass" autoComplete="new-password" value={form.password} onChange={(event) => update('password', event.target.value)} />
             </FormField>
 
             <FormField label="Confirm password" htmlFor="su-pass2" required error={errors.confirmPassword}>
-              <input
+              <PasswordInput
                 id="su-pass2"
-                type="password"
+                autoComplete="new-password"
                 value={form.confirmPassword}
                 onChange={(event) => update('confirmPassword', event.target.value)}
               />

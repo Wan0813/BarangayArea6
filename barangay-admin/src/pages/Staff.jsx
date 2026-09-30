@@ -7,6 +7,7 @@ import StatusBadge from '../components/StatusBadge';
 import Modal from '../components/Modal';
 import ConfirmDialog from '../components/ConfirmDialog';
 import FormField from '../components/FormField';
+import PasswordInput from '../components/PasswordInput';
 import { useToast } from '../components/Toast';
 import { users } from '../api/endpoints';
 import usePagedList from '../hooks/usePagedList';
@@ -308,9 +309,9 @@ export default function Staff() {
             </FormField>
 
             <FormField label="Temporary password" htmlFor="st-pass" required hint="At least 6 characters.">
-              <input
+              <PasswordInput
                 id="st-pass"
-                type="password"
+                autoComplete="new-password"
                 value={form.password}
                 onChange={(event) => setForm((prev) => ({ ...prev, password: event.target.value }))}
               />

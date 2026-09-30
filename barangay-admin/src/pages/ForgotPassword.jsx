@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../components/Toast';
 import FormField from '../components/FormField';
+import PasswordInput from '../components/PasswordInput';
 import { auth } from '../api/endpoints';
 import { config } from '../config';
 import { errorMessage } from '../utils/format';
@@ -150,17 +151,17 @@ export default function ForgotPassword() {
         {step === 2 ? (
           <form onSubmit={resetPassword}>
             <FormField label="New password" htmlFor="fp-pass" required hint="At least 6 characters.">
-              <input
+              <PasswordInput
                 id="fp-pass"
-                type="password"
+                autoComplete="new-password"
                 value={passwords.newPassword}
                 onChange={(event) => setPasswords((prev) => ({ ...prev, newPassword: event.target.value }))}
               />
             </FormField>
             <FormField label="Confirm new password" htmlFor="fp-pass2" required>
-              <input
+              <PasswordInput
                 id="fp-pass2"
-                type="password"
+                autoComplete="new-password"
                 value={passwords.confirmPassword}
                 onChange={(event) => setPasswords((prev) => ({ ...prev, confirmPassword: event.target.value }))}
               />

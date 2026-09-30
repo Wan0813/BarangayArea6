@@ -1,8 +1,8 @@
 // Small design tokens. Keep it simple — functionality over polish.
 export const colors = {
-  primary: '#1d4ed8',
-  primaryDark: '#1e3a8a',
-  primarySoft: '#e0e7ff',
+  primary: '#EA580C',
+  primaryDark: '#C2410C',
+  primarySoft: '#FFEDD5',
   danger: '#dc2626',
   dangerSoft: '#fee2e2',
   success: '#16a34a',

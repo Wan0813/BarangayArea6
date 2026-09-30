@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
 import FormField from '../components/FormField';
+import PasswordInput from '../components/PasswordInput';
 import { config } from '../config';
 import { errorMessage } from '../utils/format';
 
@@ -70,9 +71,8 @@ export default function Login() {
           </FormField>
 
           <FormField label="Password" htmlFor="login-pass" required error={errors.password}>
-            <input
+            <PasswordInput
               id="login-pass"
-              type="password"
               autoComplete="current-password"
               value={form.password}
               onChange={(event) => update('password', event.target.value)}

@@ -11,9 +11,9 @@
   --border-strong: #c3ccda;
   --text: #1c2430;
   --text-muted: #64748b;
-  --primary: #1657a8;
-  --primary-dark: #114683;
-  --primary-soft: #e7f0fb;
+  --primary: #EA580C;
+  --primary-dark: #C2410C;
+  --primary-soft: #FFEDD5;
   --danger: #c0392b;
   --danger-soft: #fdecea;
   --success: #1f8a4c;
@@ -148,6 +148,41 @@ a:hover {
 .btn-block {
   width: 100%;
 }
+
+/* --------------------------- password inputs ---------------------------- */
+
+.password-wrap {
+  position: relative;
+}
+.password-wrap input {
+  width: 100%;
+  padding-right: 2.4rem;
+}
+.password-toggle {
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.password-toggle:hover {
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+.password-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
 .link-btn {
   background: none;
   border: none;
@@ -270,8 +305,9 @@ input[type='checkbox'] {
 .sidebar {
   width: var(--sidebar-width);
   flex: 0 0 var(--sidebar-width);
-  background: #10233c;
-  color: #dbe6f5;
+  background: #fff;
+  color: var(--text);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   padding: 0.9rem 0.7rem;
@@ -296,11 +332,11 @@ input[type='checkbox'] {
   line-height: 1.2;
 }
 .brand-text strong {
-  color: #fff;
+  color: var(--text);
   font-size: 0.9rem;
 }
 .brand-text small {
-  color: #93a9c6;
+  color: var(--text-muted);
   font-size: 0.75rem;
 }
 
@@ -316,14 +352,14 @@ input[type='checkbox'] {
   gap: 0.55rem;
   padding: 0.5rem 0.6rem;
   border-radius: var(--radius-sm);
-  color: #cad8ea;
+  color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 550;
 }
 .nav-link:hover {
-  background: #17314f;
+  background: var(--primary-soft);
   text-decoration: none;
-  color: #fff;
+  color: var(--primary-dark);
 }
 .nav-link.is-active {
   background: var(--primary);
@@ -334,12 +370,12 @@ input[type='checkbox'] {
   text-align: center;
 }
 .sidebar-foot {
-  border-top: 1px solid #1d3552;
+  border-top: 1px solid var(--border);
   padding-top: 0.6rem;
   margin-top: 0.6rem;
 }
 .sidebar-foot .muted {
-  color: #8ba2c0;
+  color: var(--text-muted);
 }
 
 .main-area {
@@ -980,7 +1016,7 @@ input[type='checkbox'] {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background: linear-gradient(160deg, #10233c, #1d4e8a 60%, #1657a8);
+  background: linear-gradient(160deg, #7C2D12, #C2410C 60%, #EA580C);
 }
 .auth-card {
   width: 100%;

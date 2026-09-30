@@ -13,16 +13,16 @@
    ========================================================================== */
 
 :root {
-  --brand: #0e7c66;
-  --brand-dark: #0a5b4b;
-  --brand-soft: #e6f4f0;
-  --navy: #10263c;
-  --navy-soft: #1b3a56;
-  --accent: #f2b134;
-  --ink: #12212b;
-  --muted: #5b6b76;
-  --line: #e2e9e7;
-  --bg: #f6f9f8;
+  --brand: #EA580C;
+  --brand-dark: #C2410C;
+  --brand-soft: #FFEDD5;
+  --navy: #431407;
+  --navy-soft: #7C2D12;
+  --accent: #FDBA74;
+  --ink: #231206;
+  --muted: #6b5d4f;
+  --line: #f0e2d4;
+  --bg: #FFF9F4;
   --surface: #ffffff;
   --danger: #c0392b;
   --danger-soft: #fdecea;
@@ -31,12 +31,12 @@
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 22px;
-  --shadow-sm: 0 1px 2px rgba(16, 38, 60, .06), 0 2px 8px rgba(16, 38, 60, .05);
-  --shadow: 0 10px 30px rgba(16, 38, 60, .10);
-  --shadow-lg: 0 24px 60px rgba(16, 38, 60, .16);
+  --shadow-sm: 0 1px 2px rgba(67, 20, 7, .06), 0 2px 8px rgba(67, 20, 7, .05);
+  --shadow: 0 10px 30px rgba(67, 20, 7, .10);
+  --shadow-lg: 0 24px 60px rgba(67, 20, 7, .16);
   --max-width: 1120px;
   --header-height: 68px;
-  --focus: 0 0 0 3px rgba(14, 124, 102, .35);
+  --focus: 0 0 0 3px rgba(234, 88, 12, .35);
 }
 
 *,
@@ -134,8 +134,8 @@ code {
 }
 
 .section--dark {
-  background: linear-gradient(160deg, var(--navy) 0%, #17395a 100%);
-  color: #e7eef4;
+  background: linear-gradient(160deg, var(--navy) 0%, #7C2D12 100%);
+  color: #FFF7ED;
 }
 
 .section--dark h2,
@@ -149,7 +149,7 @@ code {
 
 .section__head p { color: var(--muted); margin-bottom: 0; }
 
-.section--dark .section__head p { color: #b9c9d7; }
+.section--dark .section__head p { color: #FED7AA; }
 
 .eyebrow {
   display: inline-block;
@@ -166,7 +166,7 @@ code {
 
 .section--dark .eyebrow {
   background: rgba(255, 255, 255, .12);
-  color: #ffd98a;
+  color: #FDBA74;
 }
 
 .grid {
@@ -345,9 +345,9 @@ code {
 .nav-toggle__bars::after { top: 6px; }
 
 .api-warning {
-  background: #fff8e6;
-  border-bottom: 1px solid #f0dca6;
-  color: #7a5a12;
+  background: #FFF7ED;
+  border-bottom: 1px solid #FED7AA;
+  color: #9A3412;
   font-size: .86rem;
 }
 
@@ -358,7 +358,7 @@ code {
   padding: 10px 20px;
 }
 
-.api-warning strong { color: #6b4c07; }
+.api-warning strong { color: #7C2D12; }
 
 /* ==========================================================================
    4. Buttons
@@ -574,6 +574,7 @@ code {
 .feature-card {
   display: flex;
   flex-direction: column;
+  border-top: 4px solid var(--brand);
   transition: transform .16s ease, box-shadow .18s ease;
 }
 
@@ -652,7 +653,7 @@ code {
   font-weight: 800;
   letter-spacing: -.02em;
   line-height: 1.1;
-  color: #ffd98a;
+  color: #FDBA74;
 }
 
 .stat-card__label {
@@ -662,7 +663,7 @@ code {
 
 .stat-card__hint {
   font-size: .78rem;
-  color: #b9c9d7;
+  color: #FED7AA;
   line-height: 1.45;
 }
 
@@ -712,7 +713,7 @@ code {
 
 .announcement__text {
   margin: 0;
-  color: #33424d;
+  color: #44403C;
   font-size: .94rem;
   overflow-wrap: anywhere;
 }
@@ -740,7 +741,7 @@ code {
   font-size: .75rem;
   font-weight: 700;
   letter-spacing: .02em;
-  background: #eef2f1;
+  background: #F5EDE4;
   color: var(--muted);
   border: 1px solid transparent;
 }
@@ -750,7 +751,7 @@ code {
 .badge--approved  { background: #e8f6ee; color: var(--ok); border-color: #c3e6d3; }
 .badge--resolved  { background: #e8f6ee; color: var(--ok); border-color: #c3e6d3; }
 .badge--rejected  { background: var(--danger-soft); color: var(--danger); border-color: #f6ccc7; }
-.badge--neutral   { background: #eef2f1; color: var(--muted); }
+.badge--neutral   { background: #F5EDE4; color: var(--muted); }
 
 .pagination {
   display: flex;
@@ -803,7 +804,7 @@ code {
   height: 12px;
   border-radius: 6px;
   margin-bottom: 12px;
-  background: linear-gradient(90deg, #eef2f1 25%, #e2e9e7 37%, #eef2f1 63%);
+  background: linear-gradient(90deg, #F5EDE4 25%, #EADDCB 37%, #F5EDE4 63%);
   background-size: 400% 100%;
   animation: skeleton-shimmer 1.4s ease-in-out infinite;
 }
@@ -818,7 +819,7 @@ code {
 }
 
 .section--dark .skeleton__line {
-  background: linear-gradient(90deg, #2b4a67 25%, #3a6183 37%, #2b4a67 63%);
+  background: linear-gradient(90deg, #7C2D12 25%, #9A3412 37%, #7C2D12 63%);
   background-size: 400% 100%;
 }
 
@@ -839,8 +840,8 @@ code {
 }
 
 .empty-state--warning {
-  background: #fffdf5;
-  border-color: #f0dca6;
+  background: #FFF7ED;
+  border-color: #FED7AA;
 }
 
 .empty-state__icon { font-size: 1.7rem; display: block; margin-bottom: 8px; }
@@ -893,7 +894,7 @@ code {
   padding: 12px 14px 12px 40px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #fbfdfc;
+  background: #FFFBF7;
   color: var(--ink);
 }
 
@@ -931,7 +932,7 @@ code {
   padding: 11px 12px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #fbfdfc;
+  background: #FFFBF7;
   min-width: 165px;
 }
 
@@ -1011,7 +1012,7 @@ code {
   margin: 0 auto 16px;
   border-radius: var(--radius);
   border: 2px dashed var(--line);
-  background: #fbfdfc;
+  background: #FFFBF7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1034,7 +1035,7 @@ code {
   padding: 0 0 18px 46px;
   counter-increment: install;
   font-size: .92rem;
-  color: #33424d;
+  color: #44403C;
 }
 
 .install-steps li::before {
@@ -1250,7 +1251,7 @@ code {
 
 .faq__answer {
   padding: 4px 20px 18px;
-  color: #3a4854;
+  color: #44403C;
   font-size: .92rem;
 }
 
@@ -1315,12 +1316,12 @@ code {
 
 .site-footer {
   background: var(--navy);
-  color: #c3d1dd;
+  color: #F5D9C4;
   padding: 52px 0 26px;
   font-size: .9rem;
 }
 
-.site-footer a { color: #eaf3f8; }
+.site-footer a { color: #FFF7ED; }
 .site-footer h3 { color: #fff; font-size: 1rem; margin-bottom: 12px; }
 
 .footer__grid {
@@ -1345,7 +1346,7 @@ code {
 }
 
 .footer__brand strong { color: #fff; display: block; }
-.footer__brand span { font-size: .8rem; color: #9fb3c4; }
+.footer__brand span { font-size: .8rem; color: #D9BBA6; }
 
 .footer__list {
   list-style: none;
@@ -1364,13 +1365,13 @@ code {
   gap: 10px;
   justify-content: space-between;
   font-size: .8rem;
-  color: #9fb3c4;
+  color: #D9BBA6;
 }
 
 .footer__note {
   background: rgba(242, 177, 52, .12);
   border: 1px solid rgba(242, 177, 52, .3);
-  color: #ffd98a;
+  color: #FDBA74;
   border-radius: var(--radius-sm);
   padding: 10px 12px;
   font-size: .8rem;

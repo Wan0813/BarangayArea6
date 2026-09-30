@@ -25,6 +25,7 @@ export default function ImagePickerField({
           quality: 0.7,
           allowsEditing: true,
           aspect,
+          base64: true,
         });
         if (!shot.canceled && shot.assets && shot.assets[0]) onChange(shot.assets[0]);
         return;
@@ -34,6 +35,7 @@ export default function ImagePickerField({
         quality: 0.7,
         allowsEditing: true,
         aspect,
+        base64: true,
       });
       if (!result.canceled && result.assets && result.assets[0]) onChange(result.assets[0]);
     } catch (e) {
@@ -49,6 +51,7 @@ export default function ImagePickerField({
         quality: 0.7,
         allowsEditing: true,
         aspect,
+        base64: true,
       });
       if (!result.canceled && result.assets && result.assets[0]) onChange(result.assets[0]);
     } catch (e) {

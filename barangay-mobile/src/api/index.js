@@ -1,5 +1,5 @@
 import { config } from '../config';
-import { get, post, put, del, postForm, putForm, resolveFileUrl } from './client';
+import { get, post, put, del, resolveFileUrl, assetToDataUrl } from './client';
 
 export { resolveFileUrl };
 
@@ -8,10 +8,10 @@ const P = config.apiBaseUrl;
 /* ------------------------------------------------------------------ auth */
 
 export const auth = {
-  /** multipart/form-data — `asset` is the valid ID image from expo-image-picker. */
+  /** JSON + base64 data URL — `asset` is the valid ID image from expo-image-picker. */
   register(fields, idAsset) {
     const { validId, ...rest } = fields;
-    return postForm('/auth/register', { ...rest, validIdType: fields.validIdType }, 'validId', idAsset);
+    return post('/auth/register', { ...rest, validIdType: fields.validIdType, validIdImagePath: assetToDataUrl(idAsset) });
   },
   login(usernameOrEmail, password) {
     return post('/auth/login', { usernameOrEmail, password });
@@ -42,9 +42,9 @@ export const complaints = {
   getById(id) {
     return get(`/complaints/${id}`);
   },
-  /** multipart: type, subject, description, location, image? */
+  /** JSON + optional base64 image. */
   create(fields, imageAsset) {
-    return postForm('/complaints', fields, 'image', imageAsset);
+    return post('/complaints', { ...fields, imagePath: imageAsset ? assetToDataUrl(imageAsset) : null });
   },
   comments(id) {
     return get(`/complaints/${id}/comments`);
@@ -71,9 +71,9 @@ export const emergencies = {
   getById(id) {
     return get(`/emergencies/${id}`);
   },
-  /** multipart: kind, location, contactNumber, description, image? */
+  /** JSON + optional base64 image. */
   create(fields, imageAsset) {
-    return postForm('/emergencies', fields, 'image', imageAsset);
+    return post('/emergencies', { ...fields, imagePath: imageAsset ? assetToDataUrl(imageAsset) : null });
   },
   stats() {
     return get('/emergencies/stats');
@@ -146,9 +146,9 @@ export const profile = {
   update(fields) {
     return put('/auth/profile', fields);
   },
-  /** Upload the signed-in user's own profile photo. */
+  /** Upload the signed-in user's own profile photo (base64 data URL in JSON). */
   uploadPhoto(asset) {
-    return postForm('/auth/photo', {}, 'photo', asset);
+    return post('/auth/photo', { photo: assetToDataUrl(asset) });
   },
   /** Head admin variant: update another account by id. */
   updateById(id, fields) {

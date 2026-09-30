@@ -208,4 +208,28 @@ export function resolveFileUrl(path) {
   return `${base}${clean}`;
 }
 
-export default { get, post, put, del, postForm, putForm, resolveFileUrl, setUnauthorizedHandler, getToken, SESSION_KEY };
+export default { get, post, put, del, postForm, putForm, resolveFileUrl, assetToDataUrl, setUnauthorizedHandler, getToken, SESSION_KEY };
+
+/**
+ * Converts an expo-image-picker asset into a `data:` URL string that the API
+ * accepts inside plain JSON bodies (register, complaints, emergencies,
+ * profile photo all accept images as base64 data URLs — no multipart needed).
+ *
+ * Why not multipart? Expo SDK 57's fetch only accepts Blob file parts; the
+ * classic { uri, name, type } descriptor throws
+ * "Unsupported FormDataPart implementation". Base64-in-JSON avoids the native
+ * upload stack entirely and works in Expo Go and the standalone APK.
+ */
+export function assetToDataUrl(asset) {
+  if (!asset) return null;
+  if (typeof asset === 'string') {
+    if (asset.startsWith('data:')) return asset;
+    throw new Error('Please re-select the image so it can be uploaded.');
+  }
+  if (asset.base64) {
+    const mime = asset.mimeType || asset.mime || asset.type || 'image/jpeg';
+    const normalized = mime.includes('/') ? mime : 'image/jpeg';
+    return `data:${normalized};base64,${asset.base64}`;
+  }
+  throw new Error('Please re-select the image so it can be uploaded.');
+}

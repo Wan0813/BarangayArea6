@@ -47,52 +47,55 @@ export default function Login() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-head">
-          <img src={logo} alt="Barangay San Jose logo" className="brand-logo brand-logo-lg" />
+      <div className="auth-split">
+        <div className="auth-brand">
+          <img src={logo} alt="Barangay San Jose logo" className="auth-brand-logo" />
           <h1>{config.barangayName}</h1>
-          <p className="muted small">
-            {config.appName} · Admin Dashboard
-            <br />
-            {config.municipality}
-          </p>
+          <p className="auth-brand-sub">{config.municipality}</p>
+          <p className="auth-brand-app">{config.appName}</p>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate>
-          <FormField label="Username or email" htmlFor="login-user" required error={errors.usernameOrEmail}>
-            <input
-              id="login-user"
-              type="text"
-              autoComplete="username"
-              value={form.usernameOrEmail}
-              onChange={(event) => update('usernameOrEmail', event.target.value)}
-            />
-          </FormField>
+        <div className="auth-card">
+          <div className="auth-head">
+            <h1>Log In</h1>
+          </div>
 
-          <FormField label="Password" htmlFor="login-pass" required error={errors.password}>
-            <PasswordInput
-              id="login-pass"
-              autoComplete="current-password"
-              value={form.password}
-              onChange={(event) => update('password', event.target.value)}
-            />
-          </FormField>
+          <form onSubmit={handleSubmit} noValidate>
+            <FormField label="Username or email" htmlFor="login-user" required error={errors.usernameOrEmail}>
+              <input
+                id="login-user"
+                type="text"
+                autoComplete="username"
+                value={form.usernameOrEmail}
+                onChange={(event) => update('usernameOrEmail', event.target.value)}
+              />
+            </FormField>
 
-          <button type="submit" className="btn btn-primary btn-block" disabled={busy}>
-            {busy ? 'Signing in…' : 'Sign in'}
-          </button>
-        </form>
+            <FormField label="Password" htmlFor="login-pass" required error={errors.password}>
+              <PasswordInput
+                id="login-pass"
+                autoComplete="current-password"
+                value={form.password}
+                onChange={(event) => update('password', event.target.value)}
+              />
+            </FormField>
 
-        <div className="auth-foot">
-          <span>
-            No account yet? <Link to="/signup">Create one</Link>
-          </span>
-          <span>
-            <Link to="/forgot-password">Forgot your password?</Link>
-          </span>
-          <span className="small">
-            New accounts stay <strong>Pending</strong> until a Head Admin approves them.
-          </span>
+            <button type="submit" className="btn btn-primary btn-block" disabled={busy}>
+              {busy ? 'Signing in…' : 'Sign in'}
+            </button>
+          </form>
+
+          <div className="auth-foot">
+            <span>
+              No account yet? <Link to="/signup">Create one</Link>
+            </span>
+            <span>
+              <Link to="/forgot-password">Forgot your password?</Link>
+            </span>
+            <span className="small">
+              New accounts stay <strong>Pending</strong> until a Head Admin approves them.
+            </span>
+          </div>
         </div>
       </div>
     </div>

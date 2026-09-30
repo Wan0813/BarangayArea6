@@ -1041,6 +1041,72 @@ input[type='checkbox'] {
 .auth-card-wide {
   max-width: 760px;
 }
+
+/* ------------------------- split login layout --------------------------- */
+/* Logo + name on the left, login card on the right (like the BMIS mockup). */
+
+.auth-split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  width: 100%;
+  max-width: 1020px;
+}
+.auth-brand {
+  flex: 1 1 auto;
+  text-align: center;
+  color: #fff;
+  min-width: 0;
+}
+.auth-brand-logo {
+  width: clamp(200px, 28vw, 340px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 24px 60px rgba(67, 20, 7, 0.45);
+}
+.auth-brand h1 {
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  margin: 1.1rem 0 0.3rem;
+}
+.auth-brand-sub {
+  margin: 0;
+  font-weight: 700;
+  color: #FFEDD5;
+}
+.auth-brand-app {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #FED7AA;
+}
+.auth-split .auth-card {
+  flex: 0 1 430px;
+  margin: 0;
+}
+.auth-split .auth-head {
+  text-align: left;
+  margin-bottom: 1.1rem;
+}
+.auth-split .auth-head h1 {
+  font-size: 1.35rem;
+  color: var(--primary-dark);
+}
+@media (max-width: 880px) {
+  .auth-split {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .auth-brand-logo {
+    width: 150px;
+  }
+  .auth-split .auth-card {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
 .auth-head {
   text-align: center;
   margin-bottom: 1rem;

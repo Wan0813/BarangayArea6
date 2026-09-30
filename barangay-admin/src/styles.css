@@ -1049,9 +1049,9 @@ input[type='checkbox'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
+  gap: 6rem;
   width: 100%;
-  max-width: 1020px;
+  max-width: 1080px;
 }
 .auth-brand {
   flex: 1 1 auto;
@@ -1065,6 +1065,8 @@ input[type='checkbox'] {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
+  background: #fff;
+  padding: 20px;
   box-shadow: 0 24px 60px rgba(67, 20, 7, 0.45);
 }
 .auth-brand h1 {

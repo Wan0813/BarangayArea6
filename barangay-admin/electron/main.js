@@ -38,7 +38,10 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 640,
     autoHideMenuBar: true,
-    backgroundColor: '#f3f4f6',
+    backgroundColor: '#FFF9F4',
+    icon: VITE_DEV_SERVER_URL
+      ? path.join(process.env.APP_ROOT, 'public/logo.png')
+      : path.join(DIST, 'logo.png'),
     webPreferences: {
       preload: resolvePreload(),
       contextIsolation: true,

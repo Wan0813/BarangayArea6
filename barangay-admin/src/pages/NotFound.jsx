@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { config } from '../config';
+import logo from '../assets/logo.png';
 
 export default function NotFound() {
   const { isAuthenticated, isResident, logout } = useAuth();
@@ -15,9 +16,7 @@ export default function NotFound() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-head">
-          <span className="brand-mark" aria-hidden="true">
-            🧭
-          </span>
+          <img src={logo} alt="Barangay San Jose logo" className="brand-logo brand-logo-lg" />
           <h1>Page not found</h1>
           <p className="muted small">
             {config.barangayName} · {config.appName}

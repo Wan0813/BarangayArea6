@@ -5,6 +5,7 @@ import { useToast } from '../components/Toast';
 import FormField from '../components/FormField';
 import PasswordInput from '../components/PasswordInput';
 import ImageUpload from '../components/ImageUpload';
+import logo from '../assets/logo.png';
 import { auth } from '../api/endpoints';
 import { config } from '../config';
 import { VALID_ID_TYPES, errorMessage } from '../utils/format';
@@ -99,9 +100,7 @@ export default function Signup() {
     <div className="auth-page">
       <div className="auth-card auth-card-wide">
         <div className="auth-head">
-          <span className="brand-mark" aria-hidden="true">
-            🏛️
-          </span>
+          <img src={logo} alt="Barangay San Jose logo" className="brand-logo brand-logo-lg" />
           <h1>Create an account</h1>
           <p className="muted small">
             {config.barangayName} · {config.municipality}

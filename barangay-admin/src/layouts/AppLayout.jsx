@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { config } from '../config';
 import { ROLE_LABELS } from '../utils/format';
+import logo from '../assets/logo.png';
 
 /**
  * Sidebar + topbar shell.  Navigation items are filtered by role so a
@@ -43,9 +44,7 @@ export default function AppLayout() {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            🏛️
-          </span>
+          <img src={logo} alt="Barangay San Jose logo" className="brand-logo" />
           <span className="brand-text">
             <strong>{config.barangayName}</strong>
             <small>Admin Dashboard</small>

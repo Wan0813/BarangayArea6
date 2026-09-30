@@ -326,6 +326,18 @@ input[type='checkbox'] {
 .brand-mark {
   font-size: 1.5rem;
 }
+.brand-logo {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.brand-logo-lg {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 0.5rem;
+}
 .brand-text {
   display: flex;
   flex-direction: column;

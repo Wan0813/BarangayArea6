@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Barangay Area 6",
+    "slug": "barangay-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "barangaymobile",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.barangayarea6.mobile"
+    },
+    "android": {
+      "package": "com.barangayarea6.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos so you can attach a valid ID or complaint image."
+        }
+      ]
+    ]
+  }
+}

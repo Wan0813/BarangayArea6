@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MyApp.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj" />
+    <ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.20" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.20" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.20" />
+  </ItemGroup>
+
+  <!-- Package references are added via `dotnet add package` (see scripts/setup-backend.ps1)
+       to always resolve the latest compatible version: Microsoft.EntityFrameworkCore,
+       Microsoft.Extensions.DependencyInjection.Abstractions -->
+
+</Project>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barangay Management Information System</title>
+  <meta name="description" content="Official promotional website of the Barangay Management Information System. Download the mobile app, read barangay announcements, find emergency hotlines and learn how the system serves residents.">
+  <meta name="theme-color" content="#0e7c66">
+  <meta property="og:title" content="Barangay Management Information System">
+  <meta property="og:description" content="File complaints, request emergency rescue and read barangay announcements from your phone.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ======================================================================
+     Sticky navbar
+     ====================================================================== -->
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top">
+      <img class="brand__logo" src="assets/logo.svg" alt="">
+      <span class="brand__text">
+        <span class="brand__name" data-config="barangayName">Barangay</span>
+        <span class="brand__sub">Management Information System</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="#download">Download</a>
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#statistics">Statistics</a>
+      <a href="#announcements">Announcements</a>
+      <a href="#hotlines">Hotlines</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="btn btn--primary btn--small header-cta" href="#download">Download App</a>
+  </div>
+
+  <!-- Shown by app.js when the API cannot be reached -->
+  <div class="api-warning" id="api-warning" hidden>
+    <div class="container api-warning__inner">
+      <span aria-hidden="true">📡</span>
+      <span>
+        <strong>Live data is unavailable.</strong>
+        <span data-api-warning-detail>The public API could not be reached, so this page is showing its offline content.</span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ====================================================================
+       1. HERO
+       ==================================================================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="hero__badge"><span aria-hidden="true">🏛️</span> Official barangay website</span>
+
+        <h1 class="hero__title" id="hero-title">
+          <span data-config="barangayName">Barangay</span>
+        </h1>
+        <p class="hero__municipality" data-config="municipality"></p>
+
+        <p class="hero__tagline">
+          The <strong>Barangay Management Information System</strong> connects residents with their
+          barangay office. File complaints, request emergency rescue, follow up on cases, and read
+          official announcements — all from one mobile app.
+        </p>
+
+        <div class="btn-row hero__actions">
+          <a class="btn btn--primary" id="hero-android" href="#download">
+            <span aria-hidden="true">🤖</span> Download for Android (APK)
+          </a>
+          <a class="btn btn--ghost" id="hero-ios" href="#download" data-open-new>
+            <span aria-hidden="true">🍎</span> Download for iOS
+          </a>
+        </div>
+
+        <div class="hero__note">
+          <p>
+            <strong>Current version:</strong> <span id="hero-version">Version not set</span><br>
+            <span id="hero-release-notes">Release notes will be posted here.</span>
+          </p>
+        </div>
+
+        <ul class="hero__chips" aria-label="Highlights">
+          <li class="chip">✔ Verified resident accounts</li>
+          <li class="chip">✔ Track every complaint</li>
+          <li class="chip">✔ SOS emergency requests</li>
+          <li class="chip">✔ Transparent daily operations</li>
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <img class="hero__mockup" src="assets/app-mockup.svg" alt="Preview of the barangay mobile application interface">
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       2. DOWNLOAD
+       ==================================================================== -->
+  <section class="section section--alt" id="download" aria-labelledby="download-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Get the mobile app</span>
+        <h2 id="download-title">Download the resident app</h2>
+        <p>Install the app on your phone, register with a valid ID, and wait for the barangay to approve your account. No fees, no paperwork.</p>
+      </div>
+
+      <div class="download__layout">
+        <div class="download__panel">
+          <div class="download__specs">
+            <div class="spec">
+              <span class="spec__label">Version</span>
+              <span class="spec__value" id="download-version">Version not set</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label">File type</span>
+              <span class="spec__value">Android APK · iOS app</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label">Approx. size</span>
+              <span class="spec__value">≈ 45 MB</span>
+            </div>
+            <div class="spec">
+              <span class="spec__label">Price</span>
+              <span class="spec__value">Free for residents</span>
+            </div>
+          </div>
+
+          <h3>Requirements</h3>
+          <p class="muted small" id="download-requirements">Android 8.0 (Oreo) or newer, 100 MB free storage, and an internet connection for first sign-in.</p>
+
+          <h3>Release notes</h3>
+          <p class="muted small" id="download-release-notes">Release notes will be posted here.</p>
+
+          <div class="btn-row">
+            <a class="btn btn--primary" id="download-android" href="#download">
+              <span aria-hidden="true">🤖</span> Android APK
+            </a>
+            <a class="btn btn--dark" id="download-ios" href="#download" data-open-new>
+              <span aria-hidden="true">🍎</span> iOS app
+            </a>
+            <a class="btn btn--ghost" id="download-direct" href="#download">
+              <span aria-hidden="true">⬇️</span> Direct download
+            </a>
+          </div>
+          <p class="muted small" style="margin:14px 0 0">
+            Buttons marked as unavailable have no link configured yet. Ask the barangay office for the current installer.
+          </p>
+        </div>
+
+        <div class="stack">
+          <div class="qr-box">
+            <div class="qr-box__frame" id="qr-placeholder">
+              <img src="assets/qr-placeholder.svg" alt="Placeholder graphic for the app download QR code">
+            </div>
+            <h3>Scan to install</h3>
+            <p class="qr-box__caption" id="qr-caption">The QR code appears here once a direct download link is configured in src/config.js.</p>
+          </div>
+
+          <div class="card">
+            <h3>Install on Android (step by step)</h3>
+            <ol class="install-steps">
+              <li><strong>Tap “Android APK”.</strong> The installer file downloads to your phone.</li>
+              <li><strong>Open the downloaded file.</strong> Use the notification or your Files app.</li>
+              <li><strong>Allow unknown sources.</strong> If Android asks, open Settings → Apps → Special access → Install unknown apps and enable it for your browser or file manager.</li>
+              <li><strong>Tap Install.</strong> Android may show a Play Protect warning; choose “Install anyway” only if you downloaded the file from this official site.</li>
+              <li><strong>Register in the app.</strong> Use your real name, contact number and address, and upload a photo of a valid ID.</li>
+              <li><strong>Wait for approval.</strong> A barangay admin verifies your ID. You are notified when your account becomes active.</li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h3>Install on iPhone</h3>
+            <ol class="install-steps">
+              <li>Tap “iOS app” to open the App Store listing.</li>
+              <li>Tap <strong>Get</strong> and confirm with your Apple ID or Face ID.</li>
+              <li>Open the app and register with the same details you would give the barangay office.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       3. FEATURES
+       ==================================================================== -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">What you can do</span>
+        <h2 id="features-title">Everything a resident needs</h2>
+        <p>One account gives you a direct line to the barangay office — before, during and after an incident.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">📝</span>
+          <h3 class="card__title">File complaints</h3>
+          <p class="card__text">Report concerns such as noise, garbage, drainage or disputes, attach a photo, and send it straight to the barangay desk.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🔎</span>
+          <h3 class="card__title">Track complaint status</h3>
+          <p class="card__text">Follow every case from Pending to Ongoing to Resolved, and read the barangay's official response and comments.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🚨</span>
+          <h3 class="card__title">Emergency rescue requests</h3>
+          <p class="card__text">Send an SOS with your location, contact number and description so responders know exactly where to go.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">📢</span>
+          <h3 class="card__title">Community announcements</h3>
+          <p class="card__text">Read official posts, advisories and community updates published by the barangay — with images.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">📋</span>
+          <h3 class="card__title">Daily operations transparency</h3>
+          <p class="card__text">See published daily operations: patrols, cleanliness drives, health services, meetings and resident services.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🪪</span>
+          <h3 class="card__title">Verified resident accounts</h3>
+          <p class="card__text">Sign up with a valid ID. A barangay admin reviews and approves every account, keeping the community genuine and safe.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🏠</span>
+          <h3 class="card__title">Household records</h3>
+          <p class="card__text">Once approved, your account can be linked to your household, so the barangay has accurate family records on file.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🛡️</span>
+          <h3 class="card__title">On-duty personnel board</h3>
+          <p class="card__text">Know who is on duty today, their assigned area, shift and contact details before you go to the office.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="card__icon" aria-hidden="true">🔔</span>
+          <h3 class="card__title">Status notifications</h3>
+          <p class="card__text">Get updates when your account is approved or when the status of your complaint or emergency request changes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       4. HOW IT WORKS
+       ==================================================================== -->
+  <section class="section section--alt" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-title">From sign-up to resolution in four steps</h2>
+        <p>The same flow for every resident: register, get verified, report, and follow up.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <h3>Sign up in the app</h3>
+          <p>Fill in your name, age, contact number and address, then choose whether you are registering as a resident.</p>
+        </li>
+        <li class="step">
+          <h3>Admin approves your valid ID</h3>
+          <p>Upload a photo of any valid ID. A barangay admin checks it against the records and activates your account.</p>
+        </li>
+        <li class="step">
+          <h3>Report complaints or emergencies</h3>
+          <p>File a complaint with details and a photo, or send an emergency request with your exact location.</p>
+        </li>
+        <li class="step">
+          <h3>Track status and read responses</h3>
+          <p>Watch your case move to Ongoing, Processing or Resolved and read the barangay's written response.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       5. STATISTICS (GET /public/statistics)
+       ==================================================================== -->
+  <section class="section section--dark" id="statistics" aria-labelledby="statistics-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">By the numbers</span>
+        <h2 id="statistics-title">Barangay service at a glance</h2>
+        <p>Live counters from the management system — updated whenever the barangay records a new action.</p>
+      </div>
+
+      <div class="grid grid--3" id="statistics-grid">
+        <article class="stat-card">
+          <span class="stat-card__icon" aria-hidden="true">📊</span>
+          <span class="stat-card__value">—</span>
+          <span class="stat-card__label">Loading statistics</span>
+          <span class="stat-card__hint">Please wait while we contact the barangay server.</span>
+        </article>
+      </div>
+
+      <div class="statistics__foot">
+        <p class="small" style="margin:0;color:#b9c9d7" id="statistics-updated"></p>
+        <button class="btn btn--ghost btn--small" type="button" id="statistics-reload">Refresh counters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       6. ANNOUNCEMENTS (GET /public/announcements)
+       ==================================================================== -->
+  <section class="section" id="announcements" aria-labelledby="announcements-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Community updates</span>
+        <h2 id="announcements-title">Barangay announcements</h2>
+        <p>Official posts and advisories from the barangay office. Search by keyword, or sort the list.</p>
+      </div>
+
+      <div class="announcements__toolbar">
+        <p class="announcements__count" id="announcements-count">Loading announcements…</p>
+        <div id="announcements-search"><!-- universal search bar is injected here --></div>
+      </div>
+
+      <div class="grid grid--3" id="announcements-list">
+        <div class="card skeleton" aria-hidden="true">
+          <div class="skeleton__line skeleton__line--title"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line skeleton__line--short"></div>
+        </div>
+      </div>
+
+      <nav id="announcements-pagination" class="pagination" aria-label="Announcements pages"></nav>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       7. EMERGENCY HOTLINES (GET /public/hotlines)
+       ==================================================================== -->
+  <section class="section section--alt" id="hotlines" aria-labelledby="hotlines-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Keep these saved</span>
+        <h2 id="hotlines-title">Emergency hotlines</h2>
+        <p>Tap any number to call directly from your phone. Emergency hotlines are shown first.</p>
+      </div>
+
+      <div class="announcements__toolbar">
+        <div id="hotlines-search"><!-- universal search bar is injected here --></div>
+      </div>
+
+      <div class="grid grid--3" id="hotlines-list">
+        <div class="card skeleton" aria-hidden="true">
+          <div class="skeleton__line skeleton__line--title"></div>
+          <div class="skeleton__line"></div>
+          <div class="skeleton__line skeleton__line--short"></div>
+        </div>
+      </div>
+
+      <p class="muted small center" style="margin-top:22px">
+        In a life-threatening emergency, call the national emergency hotline <strong>911</strong> immediately.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       8. ABOUT (GET /public/info + GET /public/organization)
+       ==================================================================== -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">About the barangay</span>
+        <h2 id="about-title">Who we are and how to reach us</h2>
+        <p class="small" id="about-source-note"></p>
+      </div>
+
+      <div class="about__grid">
+        <div>
+          <div class="about__panel">
+            <div class="about__headline">
+              <img class="about__logo" src="assets/logo.svg" alt="">
+              <div>
+                <h3 style="margin:0" id="about-barangay" data-config="barangayName">Barangay</h3>
+                <p class="muted small" style="margin:2px 0 0" id="about-municipality" data-config="municipality"></p>
+              </div>
+            </div>
+
+            <h4>Mission</h4>
+            <p class="muted small" id="about-mission">Loading the barangay mission…</p>
+
+            <h4>Vision</h4>
+            <p class="muted small" id="about-vision">Loading the barangay vision…</p>
+
+            <div id="about-history-wrap" hidden>
+              <h4>History</h4>
+              <p class="muted small" id="about-history"></p>
+            </div>
+          </div>
+
+          <div class="about__panel">
+            <h3>Office information</h3>
+            <dl class="about__contact">
+              <div>
+                <dt>Office hours</dt>
+                <dd id="about-office-hours" data-config="officeHours">Not published yet</dd>
+              </div>
+              <div>
+                <dt>Contact number</dt>
+                <dd id="about-contact-number" data-config="contactNumber">Not published yet</dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd id="about-contact-email" data-config="contactEmail">Not published yet</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="about__panel">
+          <h3>Barangay organizational chart</h3>
+          <p class="muted small">Officials and personnel of the barangay, as maintained in the management system.</p>
+          <div id="organization-tree">
+            <div class="card skeleton" aria-hidden="true">
+              <div class="skeleton__line skeleton__line--title"></div>
+              <div class="skeleton__line"></div>
+              <div class="skeleton__line skeleton__line--short"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       9. FAQ
+       ==================================================================== -->
+  <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Questions</span>
+        <h2 id="faq-title">Frequently asked questions</h2>
+        <p>Everything residents usually ask before installing the app.</p>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Why does my account need admin approval?</summary>
+          <div class="faq__answer">
+            <p>
+              Complaints, emergency requests and household records are official barangay transactions, so the
+              office must know that each account belongs to a real resident of the barangay. After you register,
+              a barangay admin reviews your valid ID and activates your account. You will be notified in the app
+              once it is approved.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What counts as a valid ID?</summary>
+          <div class="faq__answer">
+            <p>Any government-issued or barangay-issued ID with your name and photo, for example:</p>
+            <ul>
+              <li>Barangay ID or barangay clearance</li>
+              <li>Philippine National ID (PhilSys), passport, driver's licence, UMID, SSS or PhilHealth ID</li>
+              <li>Voter's ID or voter's certification</li>
+              <li>Student ID (for students) or senior citizen / PWD ID</li>
+            </ul>
+            <p>
+              Take a clear photo in good lighting, with all four corners visible. Blurred or edited photos are
+              declined and you will need to submit again.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What counts as an emergency?</summary>
+          <div class="faq__answer">
+            <p>
+              Use the emergency request for situations that need immediate action from responders: fire, medical
+              emergencies, accidents, flooding, fallen trees or live wires, and threats to safety.
+            </p>
+            <p>
+              For concerns that can wait for office hours — garbage collection, drainage, noise, stray animals or
+              neighbour disputes — file a <strong>complaint</strong> instead, so responders stay free for real
+              emergencies. Always dial <strong>911</strong> for life-threatening situations.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Who can see my reports and personal information?</summary>
+          <div class="faq__answer">
+            <p>
+              Your complaint and emergency records are visible only to you, the assigned barangay officers and
+              the barangay administrators. Other residents cannot browse your reports. Your password is stored
+              securely, and only the information needed for barangay services (name, address, contact number,
+              valid ID) is kept on file.
+            </p>
+            <p>Announcements, published daily operations and hotlines are public — they contain no personal data.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is the app free? Do I need mobile data?</summary>
+          <div class="faq__answer">
+            <p>
+              Yes, the app is completely free for residents of the barangay. You need an internet connection
+              (mobile data or Wi-Fi) to register, submit reports and load the latest announcements.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I still transact at the barangay office?</summary>
+          <div class="faq__answer">
+            <p>
+              Of course. The system is an additional channel, not a replacement. Walk-in transactions remain
+              available during office hours: <span data-config="officeHours"></span>.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       10. FINAL CALL TO ACTION
+       ==================================================================== -->
+  <section class="section section--dark" aria-labelledby="cta-title">
+    <div class="container center">
+      <h2 id="cta-title">Serve your barangay from your pocket</h2>
+      <p style="max-width:60ch;margin:0 auto 26px;color:#b9c9d7">
+        Install the app today, verify your account with a valid ID, and be part of a faster,
+        more transparent barangay.
+      </p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--primary" href="#download">Download the app</a>
+        <a class="btn btn--ghost" href="#faq">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     11. FOOTER
+     ====================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="assets/logo.svg" alt="">
+          <div>
+            <strong data-config="barangayName">Barangay</strong>
+            <span data-config="municipality"></span>
+          </div>
+        </div>
+        <p>
+          Official website of <span data-config="appName">the Barangay Management Information System</span> —
+          the digital service platform of <span data-config="barangayName">the barangay</span>.
+        </p>
+        <p class="footer__note">
+          The mobile app is for residents of <span data-config="barangayName">the barangay</span>.
+          Barangay officials and staff use the separate admin portal.
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact the barangay</h3>
+        <ul class="footer__list">
+          <li><a id="footer-email" href="#"><span data-config="contactEmail">Contact email not set</span></a></li>
+          <li><a id="footer-contact-number" href="#"><span data-config="contactNumber">Contact number not set</span></a></li>
+          <li><span aria-hidden="true">🕒</span> <span data-config="officeHours">Office hours not set</span></li>
+          <li><a href="#" data-config-href="facebookUrl">Facebook page</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Links</h3>
+        <ul class="footer__list">
+          <li><a href="#download">Download the app</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#announcements">Announcements</a></li>
+          <li><a href="#hotlines">Emergency hotlines</a></li>
+          <li><a href="#about">About &amp; organizational chart</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#" data-config-href="adminPortalUrl">Admin portal (barangay staff)</a></li>
+          <li><a href="README.txt">How to edit this website</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="footer-year">2026</span> <span data-config="barangayName">Barangay</span>. All rights reserved.</span>
+      <span data-config="appNameFooter">Barangay Management Information System</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts: config first (the only file you edit), then the shared helpers. -->
+<script src="src/config.js"></script>
+<script src="src/api.js"></script>
+<script src="src/ui.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

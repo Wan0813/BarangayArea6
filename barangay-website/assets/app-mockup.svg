@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" role="img" aria-label="Preview of the barangay mobile application">
+  <defs>
+    <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d3d5c"/>
+      <stop offset="1" stop-color="#10263c"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14a086"/>
+      <stop offset="1" stop-color="#0a5b4b"/>
+    </linearGradient>
+    <linearGradient id="sos" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e04b3c"/>
+      <stop offset="1" stop-color="#a92c22"/>
+    </linearGradient>
+    <clipPath id="screen">
+      <rect x="26" y="26" width="308" height="668" rx="30"/>
+    </clipPath>
+  </defs>
+
+  <!-- phone body -->
+  <rect x="8" y="8" width="344" height="704" rx="44" fill="url(#phone)"/>
+  <rect x="26" y="26" width="308" height="668" rx="30" fill="#f4f8f7"/>
+
+  <g clip-path="url(#screen)">
+    <!-- app header -->
+    <rect x="26" y="26" width="308" height="120" fill="url(#hero)"/>
+    <circle cx="62" cy="62" r="14" fill="#ffffff" opacity="0.9"/>
+    <rect x="84" y="52" width="120" height="9" rx="4.5" fill="#ffffff" opacity="0.9"/>
+    <rect x="84" y="68" width="80" height="7" rx="3.5" fill="#ffffff" opacity="0.6"/>
+    <rect x="46" y="96" width="180" height="12" rx="6" fill="#ffffff" opacity="0.85"/>
+    <rect x="46" y="116" width="130" height="9" rx="4.5" fill="#ffffff" opacity="0.55"/>
+
+    <!-- stat row -->
+    <g>
+      <rect x="42" y="162" width="86" height="64" rx="12" fill="#ffffff"/>
+      <rect x="56" y="176" width="34" height="9" rx="4.5" fill="#0e7c66"/>
+      <rect x="56" y="192" width="56" height="14" rx="7" fill="#10263c" opacity="0.75"/>
+
+      <rect x="137" y="162" width="86" height="64" rx="12" fill="#ffffff"/>
+      <rect x="151" y="176" width="34" height="9" rx="4.5" fill="#157347"/>
+      <rect x="151" y="192" width="56" height="14" rx="7" fill="#10263c" opacity="0.75"/>
+
+      <rect x="232" y="162" width="86" height="64" rx="12" fill="#ffffff"/>
+      <rect x="246" y="176" width="34" height="9" rx="4.5" fill="#b45309"/>
+      <rect x="246" y="192" width="56" height="14" rx="7" fill="#10263c" opacity="0.75"/>
+    </g>
+
+    <!-- emergency button -->
+    <rect x="42" y="244" width="276" height="64" rx="16" fill="url(#sos)"/>
+    <circle cx="76" cy="276" r="15" fill="#ffffff" opacity="0.9"/>
+    <rect x="104" y="262" width="120" height="11" rx="5.5" fill="#ffffff" opacity="0.95"/>
+    <rect x="104" y="280" width="90" height="8" rx="4" fill="#ffffff" opacity="0.65"/>
+
+    <!-- announcement cards -->
+    <rect x="42" y="326" width="276" height="86" rx="14" fill="#ffffff"/>
+    <rect x="58" y="342" width="110" height="10" rx="5" fill="#10263c" opacity="0.8"/>
+    <rect x="58" y="362" width="240" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+    <rect x="58" y="378" width="210" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+    <rect x="58" y="396" width="64" height="8" rx="4" fill="#0e7c66" opacity="0.7"/>
+
+    <rect x="42" y="426" width="276" height="86" rx="14" fill="#ffffff"/>
+    <rect x="58" y="442" width="90" height="10" rx="5" fill="#10263c" opacity="0.8"/>
+    <rect x="58" y="462" width="240" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+    <rect x="58" y="478" width="180" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+    <rect x="58" y="496" width="64" height="8" rx="4" fill="#0e7c66" opacity="0.7"/>
+
+    <rect x="42" y="526" width="276" height="70" rx="14" fill="#ffffff"/>
+    <rect x="58" y="542" width="96" height="10" rx="5" fill="#10263c" opacity="0.8"/>
+    <rect x="58" y="562" width="200" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+    <rect x="58" y="578" width="150" height="8" rx="4" fill="#5b6b76" opacity="0.5"/>
+
+    <!-- bottom navigation -->
+    <rect x="26" y="618" width="308" height="76" fill="#ffffff"/>
+    <rect x="26" y="618" width="308" height="1" fill="#e2e9e7"/>
+    <circle cx="84" cy="650" r="11" fill="#0e7c66"/>
+    <rect x="146" y="640" width="24" height="20" rx="5" fill="#c6d2cd"/>
+    <rect x="208" y="640" width="24" height="20" rx="5" fill="#c6d2cd"/>
+    <rect x="270" y="640" width="24" height="20" rx="5" fill="#c6d2cd"/>
+  </g>
+
+  <!-- speaker + camera -->
+  <rect x="148" y="16" width="64" height="7" rx="3.5" fill="#0b1a29"/>
+  <circle cx="180" cy="16" r="3" fill="#0b1a29"/>
+</svg>

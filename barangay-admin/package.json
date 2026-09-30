@@ -1,7 +1,7 @@
 {
   "name": "barangay-admin",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Admin desktop + web dashboard for the Barangay Management Information System (capstone project).",
   "type": "module",
   "main": "dist-electron/main.js",

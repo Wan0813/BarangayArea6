@@ -11,7 +11,6 @@ A capstone system with four parts:
 | `barangay-mobile/` | Resident / user app | React Native (Expo SDK 54) |
 | `barangay-website/` | Promotional website + app download | Static HTML + CSS + vanilla JS |
 | `bmis/` | Original front-end prototype kept as reference | Static HTML + CSS + JS |
-| `docs/` | API contract and configuration guide | Markdown |
 
 ---
 
@@ -160,6 +159,3 @@ organization chart, published announcements and live statistics from
 - Enums are serialized as **strings** (e.g. `"Pending"`, `"HeadAdmin"`).
 - Uploaded images are returned as web-relative paths (`uploads/...`); combine them
   with `fileBaseUrl` from each client's config.
-
-See `docs/API.md` for the full endpoint contract and `docs/CONFIG.md` for the
-per-client configuration files.

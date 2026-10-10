@@ -1,0 +1,54 @@
+CHAPTER 2
+REVIEW OF RELATED LITERATURE AND STUDIES
+
+This chapter reviews existing literature and studies that are relevant to the study of Development and Implementation of a Barangay Management Information System for Barangay San Jose Annex Area 6: Resident Complaints, Daily Operations, and Fire Rescue and Response Services. It identifies related works and research gaps that justify the development of the proposed system.
+
+Web and Mobile-Based Management Information Systems for Community Services
+
+Web and mobile-based management information systems have become essential tools for local governments in delivering faster, organized, and transparent community services (Liu, 2022). The following local and foreign studies discuss web and mobile systems for citizen services, complaint handling, and emergency response.
+
+In the Philippines setting, Regondola-Baltazar (2025) conducted a narrative review on barangay management information systems focusing on objectives, vision, pillars, and best practices. She emphasized centralized resident records and public service delivery as key to efficient governance. While the study provided framework and challenges, it did not develop an actual working web and mobile system with complaint ticketing and rescue dispatch. In relation to the present study, this review serves as baseline justification for developing a complete BMIS for Barangay San Jose Annex Area 6 with resident profiling, complaint logging, daily operations, and report generation.
+
+Similarly, Malajos (2025) reviewed best practices and community perceptions of barangay captains in the Philippines. Findings revealed that manual paper-based processes and lack of centralized data remain major barriers to governance efficiency. However, the study was limited to review and perceptions and did not present system implementation. In connection with the present study, this gap is addressed by creating an actual web-based and desktop system with mobile support to replace manual logging in Area 6.
+
+When it comes to emergency response, Pimentel and Azuelo (2026) assessed the operational capabilities of Bureau of Fire Protection personnel in Camarines Norte in disaster emergency management. They found need for organized dispatch and coordination tools to improve response time. The study did not include a digital platform for incident logging. The present study applies this by developing the Fire and Rescue Operations Command with SOS logging, Code Red/Orange/Yellow severity, rescue unit assignment, and evacuation center monitoring.
+
+In another local study, Calicdan and Fabregas (2022) developed a web-based training and evaluation system for government institutions with data analytics. They streamlined records and reporting using web technologies and analytics. The system was limited to training institutions and did not cover barangay complaints or emergency services. In relation to the present study, this supports the use of web technologies such as PHP 8.2, Laravel, React, TypeScript, Tailwind CSS, and MySQL/MariaDB for centralized barangay database and administrative reports.
+
+Additionally, Pernate and Rosales (2025) introduced BH Niyo App, a smart mobile solution for boarding house rentals in Ormoc City. They showed practicality of mobile solutions for local community needs through listing and inquiry features. However, the study focused only on rentals without barangay workflow integration. The present study builds on this by adding mobile filing of resident complaints and emergency SOS with photo evidence, status tracking, and admin review for Area 6.
+
+In a foreign setting, Jadhav et al. (2025) developed a Citizen Complaint Redressal and Infrastructure Management System in India. The system provided ticket-based complaint filing, tracking, and resolution for citizens and infrastructure issues. It lacked integration with rescue dispatch and barangay daily operations. In connection with the present study, this work provides foundation for the Resident Complaints and Grievance Desk with ticket number, priority level, tanod field action, and resolution notes.
+
+Similarly, Kholili and Sulthony (2024) designed a mobile-based village information system using Government-to-Citizen concept in Indonesia. The system improved announcements and services delivery to villagers. It did not include desktop admin for comprehensive operations and rescue. The present study extends this by combining mobile, web portal for announcements, and desktop for admin managing residents, complaints, daily operations, and fire rescue.
+
+On the other hand, Septiana and Lestari (2025) evaluated fire emergency response readiness at hospital building using structured assessment tools. They emphasized severity assessment and readiness scoring. While the study focused on hospital building, its readiness framework is relevant. The present study adapts this in BDRRMC 24/7 operations center header, active incidents monitoring, sheltered evacuees, and priority census of seniors, PWDs, and infants.
+
+In terms of fire technology, Sharma et al. (2026) applied CNN-powered image classification for fast fire versus non-fire detection to trigger rapid emergency response. The study was technical and device-focused without community management workflow. In relation to the present study, this highlights importance of rapid SOS logging and early warning broadcasts to purok leaders, megaphones, and tanod radios with critical alert directive.
+
+Lastly, Mulyana et al. (2024) implemented a web-based inventory information system in Indonesia for facility and logistics management. The system provided faster data access and control compared to manual recording. It was limited to school inventory. The present study applies similar web inventory principle to Daily Operations and Logistics including Area 6 multicab, motorcycles, maintenance depot tools, and evacuation relief packs.
+
+Synthesis
+
+The studies mentioned above show that web and mobile-based systems improve community service delivery through centralized data, ticket tracking, and rapid coordination. Local studies highlight Philippine need to shift from manual paper-based barangay processes to digital platforms, while foreign studies demonstrate proven designs for complaint redressal, village services, and emergency readiness. However, most focused on single function or review without full integration. The present study addresses this gap by integrating these technologies into one complete and localized web, mobile, and desktop BMIS for Barangay San Jose Annex Area 6, covering resident complaints, daily operations, and fire rescue and response services.
+
+References
+
+Regondola-Baltazar, J. (2025). Evaluation of Public Information System: Barangay Management Information System in the Philippines. SSRN. Link: https://doi.org/10.2139/ssrn.5248917
+
+Malajos, M. J. (2025). Enhancing Barangay Governance: Systematic Literature Review. SSRN. Link: https://doi.org/10.2139/ssrn.5027145
+
+Pimentel, M. A. R., & Azuelo, M. C. C. (2026). Operational Capabilities in Disaster Emergency Management of BFP Personnel in Camarines Norte, Philippines. Link: https://doi.org/10.66050/s34qe772
+
+Calicdan, R., & Fabregas, A. (2022). A Web-Based Training and Evaluation System for Government Institutions. Link: https://doi.org/10.69478/jitc2022v4n2a02
+
+Pernate, W. J., & Rosales, D. R. (2025). BH Niyo App: Smart Mobile Solution in Ormoc City. Link: https://doi.org/10.69478/best2025v1n2a013
+
+Jadhav, A., et al. (2025). Citizen Complaint Redressal and Infrastructure Management System (India). Link: https://doi.org/10.5220/0014604900004852
+
+Kholili, A. N., & Sulthony, M. (2024). Sistem Informasi Desa Mobile G2C, Indonesia. INTECH 5(1). Link: https://doi.org/10.54895/intech.v5i1.2474
+
+Septiana, D., & Lestari, F. (2025). Fire Emergency Response Readiness at Hospital Building. JOSR 4(6). Link: https://doi.org/10.55324/josr.v4i6.2561
+
+Sharma, J., et al. (2026). CNN-Powered Fire Detection for Rapid Response. IEEE. Link: https://doi.org/10.1109/ccic68129.2026.11486226
+
+Mulyana, N., et al. (2024). Web-Based Inventory System, Indonesia. Barometer 8(2). Link: https://doi.org/10.35261/barometer.v8i2.11150
